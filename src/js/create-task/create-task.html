@@ -1,0 +1,52 @@
+<!--
+Creates a new task
+-->
+<link rel="import" href="https://polygit.org/components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="create-task">
+	<template>
+		<style include="shared-styles">
+			:host {
+				display: block;
+				padding: 10px;
+			}
+		</style>
+		<form action="">
+			<label>Task description
+				<input type="text" value="{{task.description::input}}">
+			</label>
+			<label>Task Due
+				<input type="date" value="{{task.dueDate::input}}">
+			</label>
+			<button on-click="sendTask" type="submit">Save</button>
+		</form>
+
+	</template>
+
+	<script>
+		class CreateTask extends Polymer.Element {
+			static get is() { return 'create-task'; }
+			static get properties() {
+				return {
+					task: {
+						type: Object,
+						value: {}
+					}
+
+				}
+			}
+			sendTask(event) {
+				event.preventDefault();
+				this.dispatchEvent(new CustomEvent('newTask', {
+					bubbles: true,
+					composed: true,
+					detail: this.task
+				}));
+			}
+		}
+
+		window.customElements.define(CreateTask.is, CreateTask);
+	</script>
+</dom-module>
