@@ -3,7 +3,13 @@
 
 ## How To Use
 
+### To start Serving
+
     `$ yarn start`
+
+#### Note About Polymer
+
+    There is a link in the files to a webpage that downloads the necessary items to make the components work. No polymer installation needed right now.
 
 ## Dependencies
 
