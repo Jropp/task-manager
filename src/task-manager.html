@@ -42,6 +42,8 @@ Main app page for the task manager. It's all downhill from here
 					self.saveTask(e.detail);
 				});
 			}
+
+			// This is where the problem is
 			saveTask(task){
 				const x = task;
 				this.tasks.push(x);
