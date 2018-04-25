@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Task Manager App
 
 ## How To Use
@@ -10,3 +11,4 @@
 2. Yarn
 3. npm 
 4. Webpack
+
